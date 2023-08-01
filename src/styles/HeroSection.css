@@ -1,0 +1,30 @@
+
+.hero-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 400px; /* Ajustez la hauteur selon vos besoins */
+}
+
+.hero-image {
+  width: 200px; /* Ajustez la taille de l'image selon vos besoins */
+  height: 200px;
+  /* Autres styles pour l'image */
+}
+
+.hero-text {
+  margin-top: 10px; 
+  
+}
+
+
+.hero-text-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  font-size: 24px; /* Ajustez la taille de police selon vos besoins */
+  /* Autres styles pour le texte */
+}

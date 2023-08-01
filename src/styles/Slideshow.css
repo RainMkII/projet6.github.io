@@ -1,0 +1,7 @@
+.ImgCarousel {
+    width: 500px;
+}
+.slideshow {
+    display: flex;
+    justify-content: center;
+}
