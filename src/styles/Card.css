@@ -1,33 +1,30 @@
 .card-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr); /* Remplacez 3 par le nombre de colonnes souhaité */
-    gap: 20px; /* Espace entre les cartes */
-    WIDTH: 1224px;
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 20px; 
+    background-color: #edeeef;
    
   }
   
   .card {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    position: relative;
     padding: 20px;
-    background-color: red;
     border-radius: 8px;
     text-align: center;
     text-decoration: none;
     color: #333;
     transition: background-color 0.3s;
-    width: 286px;
-    height: 235px;
+    width: 383px;
+    height: 280px;
   }
   
   .card:hover {
-    background-color: #ddd; /* Couleur de fond au survol */
+    background-color: #ddd; 
   }
   .conteneur {
     display: flex;
-    justify-content: center; /* Centrer horizontalement */
-    align-items: center; /* Centrer verticalement */
+    justify-content: center; 
+    align-items: center; 
   }
   .card-link {
     width: 100%;
@@ -43,11 +40,11 @@
 
   .card-title {
     position: absolute;
-    top: 50%;
-    left: 50%;
+    top: 71%;
+    left: 36%;
     transform: translate(-50%, -50%);
-    background-color: rgba(255, 255, 255, 0.8);
     padding: 8px 16px;
     border-radius: 4px;
-    color: #333;
+    color: white;
+    text-shadow: -1px -1px 2px black, 1px -1px 2px black, -1px 1px 2px black, 1px 1px 2px black;
   }

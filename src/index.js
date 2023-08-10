@@ -5,6 +5,7 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import Nav from './components/NavMenu';
+import Footer from './components/Footer';
 
 const rootElement = document.getElementById('root');
 
@@ -16,6 +17,9 @@ createRoot(rootElement).render(
     <Router>
       <App />
     </Router>
+    <footer>
+      <Footer/>
+    </footer>
   </React.StrictMode>
 );
 

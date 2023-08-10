@@ -1,30 +1,31 @@
 import React, { useState } from 'react';
 import '../styles/Slideshow.css';
+import '../images/fleche-d.png';
+import '../images/fleche-g.png';
 
-function Slideshow({ images, imageClassName }) {
-  const [currentSlide, setCurrentSlide] = useState(0);
+function Slideshow({ images }) {
+  const [currentIndex, setCurrentIndex] = useState(0);
 
-  const handlePrevSlide = () => {
-    setCurrentSlide((prevSlide) => (prevSlide === 0 ? images.length - 1 : prevSlide - 1));
+  const goToPrevSlide = () => {
+    setCurrentIndex((prevIndex) => (prevIndex === 0 ? images.length - 1 : prevIndex - 1));
   };
 
-  const handleNextSlide = () => {
-    setCurrentSlide((prevSlide) => (prevSlide === images.length - 1 ? 0 : prevSlide + 1));
+  const goToNextSlide = () => {
+    setCurrentIndex((prevIndex) => (prevIndex === images.length - 1 ? 0 : prevIndex + 1));
   };
 
   return (
     <div className='slideshow'>
-      <img src={images[currentSlide]} alt={`Slide ${currentSlide + 1}`} 
-      className={imageClassName}
-      />
+      <button className='prev-button' onClick={goToPrevSlide}>
+        <img src={require('.././images/fleche-g.png')} alt='Previous' />
+      </button>
 
-      {images.length > 1 && (
-        <div className='slideshow-controls'>
-          <button onClick={handlePrevSlide}>Précédent</button>
-          <span>{currentSlide + 1} / {images.length}</span>
-          <button onClick={handleNextSlide}>Suivant</button>
-        </div>
-      )}
+      <img src={images[currentIndex]} alt='Slide' className='slide-image' />
+
+      {/* Bouton de navigation droite */}
+      <button className='next-button' onClick={goToNextSlide}>
+        <img src={require('.././images/fleche-d.png')} alt='Next' />
+      </button>
     </div>
   );
 }

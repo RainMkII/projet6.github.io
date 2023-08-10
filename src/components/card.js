@@ -1,8 +1,6 @@
-import React , { useEffect , useState} from "react";
-import { cardlist } from "../data/logement";
+import React from "react";
 import '../styles/Card.css'
 import {Link} from 'react-router-dom';
-import {useHistory} from 'react-router-dom';
 
 function Card({ logement }) {
   return (

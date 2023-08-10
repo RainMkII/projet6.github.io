@@ -1,30 +1,29 @@
 
 .hero-section {
-  display: flex;
+  position: relative;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 400px; /* Ajustez la hauteur selon vos besoins */
+  height: 273px;
+  margin: 50px;
 }
 
 .hero-image {
-  width: 200px; /* Ajustez la taille de l'image selon vos besoins */
-  height: 200px;
-  /* Autres styles pour l'image */
+  width: 95%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 15px;
+  margin-left: 33px;
 }
+
 
 .hero-text {
-  margin-top: 10px; 
-  
-}
-
-
-.hero-text-text {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  z-index: 1;
   color: white;
-  font-size: 24px; /* Ajustez la taille de police selon vos besoins */
-  /* Autres styles pour le texte */
+  padding: 10px;
+  font-size: 34px;
 }
