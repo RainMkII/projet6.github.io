@@ -2,31 +2,18 @@ import React from 'react';
 import { useParams } from 'react-router-dom';
 import { cardlist } from '../../data/logement';
 import Slideshow from '../../components/SlideShow';
+import Collapse from '../../components/Collapse';
 import '../../styles/LogementStyles.css';
+import StarRating from '../../components/StarRating';
 
-function renderStars(rating) {
-  const fullStars = Math.floor(rating);
-  const emptyStars = 5 - fullStars;
 
-  const stars = [];
-
-  for (let i = 0; i < fullStars; i++) {
-    stars.push(<img key={`full-${i}`} src={require('../../images/Star-p.png')} alt='Full Star' />);
-  }
-
-  for (let i = 0; i < emptyStars; i++) {
-    stars.push(<img key={`empty-${i}`} src={require('../../images/star-v.png')} alt='Empty Star' />);
-  }
-
-  return <div className='star-rating'>{stars}</div>;
-}
 
 function LogementDetails() {
   const { id } = useParams();
   const logement = cardlist.find((logement) => logement.id === id);
 
   if (!logement) {
-    return <div>Logement non trouvé</div>;
+    return <div className='LogementNotFound'>Logement non trouvé</div>;
   }
 
   return (
@@ -46,23 +33,21 @@ function LogementDetails() {
           <div className='host-profile'>
             <img src={logement.host.picture} alt={logement.host.name} />
             <p>{logement.host.name}</p>
-            {renderStars(logement.rating)}
+            <StarRating rating={logement.rating} />
           </div>
         </div>
       </div>
       <div className='informationLogement'>
-        <details className='description-dropdown'>
-          <summary>Description</summary>
+        <Collapse title="Description" className='description-dropdown'>
           <p>{logement.description}</p>
-        </details>
-        <details className='equipments-dropdown'>
-          <summary>Équipements</summary>
+        </Collapse>
+        <Collapse title="Équipements" className='equipments-dropdown'>
           <ul>
             {logement.equipments.map((equipment, index) => (
               <li key={index}>{equipment}</li>
             ))}
           </ul>
-        </details>
+        </Collapse>
       </div>
     </div>
   );

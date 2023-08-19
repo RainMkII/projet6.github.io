@@ -42,3 +42,12 @@
 .loc-Titre-Location-Tag h2, p {
     color: red;
 }
+
+.LogementNotFound {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 437px;
+    width: 100%;
+    font-weight: 700;
+}
